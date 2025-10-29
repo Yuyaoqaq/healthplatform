@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.healthplat.mapper.MainmenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.cy.healthplat.pojo.Mainmenu">
+        <id property="id" column="m_id" />
+        <result property="title" column="m_title" />
+        <result property="path" column="m_path" />
+        <collection property="sList" ofType="com.cy.healthplat.pojo.Submenu">
+            <id property="id" column="s_id" />
+            <result property="title" column="s_title" />
+            <result property="path" column="s_path" />
+            <result property="mid" column="s_mid" />
+        </collection>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,title,path
+    </sql>
+
+    <select id="getAll0" resultMap="BaseResultMap">
+        select
+            m.id as m_id,
+            m.title as m_title,
+            m.path as m_path,
+            s.id as s_id,
+            s.title as s_title,
+            s.path as s_path,
+            s.mid as s_mid
+        from mainmenu m
+                 left join submenu s on m.id = s.mid
+        order by m.id, s.id
+    </select>
+    <select id="getAll" resultMap="BaseResultMap">
+        select
+            m.id as m_id,
+            m.title as m_title,
+            m.path as m_path,
+            s.id as s_id,
+            s.title as s_title,
+            s.path as s_path,
+            s.mid as s_mid
+        from mainmenu m
+                 left join submenu s on m.id = s.mid
+        WHERE m.path = '/use'
+        order by m.id, s.id
+    </select>
+</mapper>

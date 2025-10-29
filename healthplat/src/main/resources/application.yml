@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/department?useSSL=false&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    url: jdbc:mysql://localhost:3306/easyproject?useSSL=false&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
@@ -23,11 +23,14 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
   global-config:
     db-config:
-      logic-delete-value: 1
-      logic-not-delete-value: 0
+      logic-delete-value: 0
+      logic-not-delete-value: 1
       id-type: auto
 
 # 日志配置（Logback）
 logging:
   level:
     com.cy.healthplat.mapper: DEBUG # 控制 MyBatis-Plus Mapper 包的 SQL 日志级别为 DEBUG
+
+server:
+  port: 9000

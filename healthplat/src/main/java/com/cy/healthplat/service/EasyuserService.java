@@ -3,6 +3,7 @@ package com.cy.healthplat.service;
 
 import com.cy.healthplat.pojo.Easyuser;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cy.healthplat.web.dto.PieDTO;
 import com.cy.healthplat.web.dto.UserAdd_EditDTO;
 import com.cy.healthplat.web.dto.UserQueryDTO;
 
@@ -24,4 +25,6 @@ public interface EasyuserService extends IService<Easyuser> {
     void deleteUserById(Integer id);
 
     void updateRole(String role,Integer id);
+
+    List<PieDTO> rolePie();
 }

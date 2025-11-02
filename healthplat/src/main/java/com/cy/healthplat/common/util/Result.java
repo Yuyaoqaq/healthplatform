@@ -38,6 +38,14 @@ public class Result<T> {
         result.total = total;
         return result;
     }
+    //状态码+信息重载
+    public static <T> Result<T> success(Integer code,T data) {
+        Result<T> result = new Result<>();
+        result.code = code;
+        result.msg = ResultCode.SUCCESS.getMsg();
+        result.data = data;
+        return result;
+    }
 
     /**
      * 成功响应（不带数据，仅返回成功状态）

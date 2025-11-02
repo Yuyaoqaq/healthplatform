@@ -29,4 +29,11 @@
         delete from easyuser
         where id = #{id}
     </delete>
+    <select id="rolePie" resultType="com.cy.healthplat.web.dto.PieDTO">
+        select
+            count(*) value,role name
+        from
+            easyuser
+        group by role
+    </select>
 </mapper>

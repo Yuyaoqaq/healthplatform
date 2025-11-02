@@ -10,11 +10,13 @@ import com.cy.healthplat.common.util.UserConvertMapper;
 import com.cy.healthplat.pojo.Easyuser;
 import com.cy.healthplat.service.EasyuserService;
 import com.cy.healthplat.mapper.EasyuserMapper;
+import com.cy.healthplat.web.dto.PieDTO;
 import com.cy.healthplat.web.dto.UserAdd_EditDTO;
 import com.cy.healthplat.web.dto.UserQueryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -93,6 +95,12 @@ public class EasyuserServiceImpl extends ServiceImpl<EasyuserMapper, Easyuser>
         }}catch (Exception e){
             throw new UserDeleteException(1009,e.getMessage(),e.getCause());
         }
+    }
+
+    @Override
+    public List<PieDTO> rolePie() {
+        List<PieDTO> list =easyuserMapper.rolePie();
+        return list;
     }
 }
 

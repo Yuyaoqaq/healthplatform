@@ -2,7 +2,10 @@ package com.cy.healthplat.mapper;
 
 import com.cy.healthplat.pojo.Easyuser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.cy.healthplat.web.dto.PieDTO;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 
 /**
@@ -17,6 +20,8 @@ public interface EasyuserMapper extends BaseMapper<Easyuser> {
     boolean deleteUserById(Integer id);
 
     boolean updateRole(@Param("role")String role,@Param("id") Integer id);
+
+    List<PieDTO> rolePie();
 }
 
 

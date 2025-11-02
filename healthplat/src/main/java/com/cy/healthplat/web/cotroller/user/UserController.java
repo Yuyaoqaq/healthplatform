@@ -9,6 +9,7 @@ import com.cy.healthplat.common.util.ResultCode;
 import com.cy.healthplat.common.util.UserConvertMapper;
 import com.cy.healthplat.pojo.Easyuser;
 import com.cy.healthplat.service.EasyuserService;
+import com.cy.healthplat.web.dto.PieDTO;
 import com.cy.healthplat.web.dto.UserAdd_EditDTO;
 import com.cy.healthplat.web.dto.UserQueryDTO;
 import com.cy.healthplat.web.dto.UserRoleDTO;
@@ -96,6 +97,15 @@ public class UserController {
             return Result.fail(exception.getCode(),exception.getMsg());
         }catch (Exception e){
             return Result.fail(ResultCode.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/pie")
+    public Result<List<PieDTO>> getPie(){
+        try {
+            List<PieDTO> list = easyuserService.rolePie();
+            return Result.success(list);
+        }catch (Exception e){
+            return Result.fail(ResultCode.DATA_NOT_FOUND);
         }
     }
 }

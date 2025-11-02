@@ -27,6 +27,7 @@ public class Easyuser {
     @TableField(fill = FieldFill.INSERT)
     private Integer state;
     @Version
+    @TableField(fill = FieldFill.INSERT)
     private Integer version;
     @TableField(fill = FieldFill.INSERT)  // 添加时 赋值
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -37,4 +38,5 @@ public class Easyuser {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date updateTime;
+    private String avatarurl;
 }

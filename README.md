@@ -1,5 +1,3 @@
-# master是第一次提交。完整提交在dev！
-# 前端前往 https://github.com/Yuyaoqaq/healthplatformfro.git
 # 项目介绍：
 - 基于Vue2+ElementUi+Axios+Spring Boot+MyBatis-Plus+MySQL技术栈，从0到1独立开发支持**多角色**的健康管理全栈平台，核心成果与技术实践如下：
 - 针对企业级**权限混乱**痛点，前端通过localStorage存储角色信息、路由守卫/白名单+meta字段配置页面权限及**自定义请求头**实现前端权限拦截，后端结合自定义过滤器、**跨域配置**类完成登录校验与角色拦截，最终实现超级管理员、普通用户/游客三类角色的细粒度权限管控，使系统**安全性提升60%**；
